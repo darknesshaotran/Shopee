@@ -24,6 +24,21 @@ html
 {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-top: 36px;
+}
+.grid__column-2
+{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.66667%;
+}
+.grid__column-8
+{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.33333%;
 }
 @keyframes QR {
     from
@@ -98,13 +113,14 @@ html
 }
 .btn
 {
-    min-width: 150px;
+    width: 150px;
     height: 36px;
     border: none;
     font-size: 1.4rem;
     border-radius: 2px;
     line-height: 36px;
     cursor: pointer;
+    background-color: white;
    
     
 
@@ -113,4 +129,13 @@ html
 {
     background-color: #f53b2d;
     color:white;
+}
+a
+{
+    text-decoration: none;
+}
+ul
+{
+    list-style: none;
+    padding-left: 0;
 }
