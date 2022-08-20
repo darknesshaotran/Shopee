@@ -119,6 +119,10 @@ html
     border-radius: 5px;
     overflow: hidden;  
 }
+.modal_open
+{
+    display: block;
+}
 .form_btn
 {
     display: flex;
