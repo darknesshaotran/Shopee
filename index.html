@@ -106,9 +106,9 @@
                                 <i class="icon ti-help-alt"></i>
                                 Trợ giúp</a> 
                         </li>
-                        <!-- <li class="header__navbar-item header__navbar-item--strong sub_hidden">Đăng ký</li>
-                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate sub_hidden">Đăng nhập</li> -->
-                        <li class=" avatar header__navbar-item sub_hidden">
+                        <li class="header__navbar-item header__navbar-item--strong sub_hidden header_register">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate sub_hidden header_login">Đăng nhập</li>
+                        <!-- <li class=" avatar header__navbar-item sub_hidden">
                             <img class="avatar-img" src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/8/21/829850/Bat-Cuoi-Truoc-Nhung-07.jpg" alt="">
                             <span class="avatar_name"> Trần Hào</span> 
                             <div class="account">
@@ -118,7 +118,7 @@
                             </div>
                             
                            
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
 
@@ -179,7 +179,7 @@
                             <img src="assets/img/sadFace.png" class="header__cart_img" alt="">
                             <p class="header_cart_annouce">chưa có sản phẩm</p>
                         </div> -->
-                        <div class="cart_list">
+                        <div class="cart_list list_no-card">
                             <img src="assets/img/sadFace.png" class="header__cart_img" alt="">
                             <p class="header_cart_annouce">chưa có sản phẩm</p>
 
@@ -190,7 +190,7 @@
                                     <img src="https://mega.com.vn/media/product/20456_laptop_dell_vostro_5510_70266006_grey_3.jpg" alt="" class="header__cart_item-img">
                                     <div class="header__cart_item-info">
                                         <div class="header__cart_item-heading">
-                                            <h4 class="header__cart_item-name">laptop Dell Vostro 5510 laptop  Dell Vostro 5510 Dell Vostro 5510 Dell Vostro 5510 </h4>
+                                            <h4 class="header__cart_item-name">laptop Dell Vostro 5510</h4>
                                             <div class="header__cart_item_total">
                                                 <span class="header__cart_item-price">22.900.000đ</span>
                                                 <span class="header__cart_item-multi">x</span>
@@ -977,10 +977,10 @@
                 </div> 
             </div>
             <div class="copyright_content">
-                <p class="copyright">Địa chỉ: Tầng 4-5-6, Tòa nhà Ecocharm Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn</p>
-                <p class="copyright">Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Mạnh - Điện thoại liên hệ: 024 73081221 (ext 4678)</p>
+                <p class="copyright">Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn</p>
+                <p class="copyright">Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí - Điện thoại liên hệ: 024 73081221 (ext 4678)</p>
                 <p class="copyright">Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015</p>
-                <p class="copyright">© 2015 - Bản quyền thuộc về Công ty TNHH HaoTran</p>
+                <p class="copyright">© 2015 - Bản quyền thuộc về Công ty TNHH Shopee</p>
             </div>
         </footer>
     </div>
@@ -994,7 +994,7 @@
         <div class="modal__body">
             <!-- REGISTER FORM -->
             
-            <!-- <div class="modal__inner">
+            <div class="modal__inner">
                 <div class="form">
                     <div class="form__header">
                         <h3 class="form__heading">Đăng ký</h3>
@@ -1040,14 +1040,14 @@
                         Kết nối với google
                     </a>
                 </div>
-            </div> -->
+            </div>
 
             <!-- LOGIN FORM -->
             
-            <!-- <div class="modal__inner">
+            <div class="modal__inner login_form">
                 <div class="form">
                     <div class="form__header">
-                        <h3 class="form__heading">Đăng nhập</h3>
+                        <h3 class="form__heading form__heading_login">Đăng nhập</h3>
                         <p class="form__switch_btn">Đăng ký</p>
                     </div>
                 
@@ -1086,10 +1086,41 @@
                         Kết nối với google
                     </a>
                 </div>
-            </div> -->
+            </div>
 
 
         </div>
     </div>
+    <script>
+        const login = document.querySelector('.header_login')    
+        const login2 = document.querySelector('.form__heading_login')    
+        const register2 = document.querySelector('.form__switch_btn')     
+        const register = document.querySelector('.header_register')
+        const modal_close = document.querySelector('.btn.back_btn')
+        const modal_inner = document.querySelector('.modal__inner')
+
+        const modal_login = document.querySelector('.login_form')
+        const modal = document.querySelector('.modal');
+        function showRegisterForm()
+        {
+            modal.classList.add('modal_open');
+
+        }
+        function CloseRegisterForm()
+        {
+            modal.classList.remove('modal_open');
+        }
+        register.onclick = function()
+        {
+            showRegisterForm();
+            modal_login.classList.remove('login_form_open');
+        }
+        modal_close.onclick = function(){CloseRegisterForm()}
+        modal.onclick = function(){CloseRegisterForm()}
+        modal_inner.onclick = function(event){ event.stopPropagation();  }
+        
+        
+        
+    </script>
 </body>
 </html>
