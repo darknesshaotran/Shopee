@@ -99,8 +99,14 @@ html
     right: 0;
     left: 0;
     bottom: 0;
+    z-index: 1000;
     display: none;
     
+}
+
+.modal_open
+{
+    display: block;
 }
 .modal__overlay
 {
@@ -118,10 +124,6 @@ html
     position: relative;
     border-radius: 5px;
     overflow: hidden;  
-}
-.modal_open
-{
-    display: block;
 }
 .form_btn
 {
