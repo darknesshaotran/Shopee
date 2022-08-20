@@ -184,3 +184,11 @@ ul
 {
     background-color:#ed5c3f;
 }
+.login_form
+{
+    display: none;
+}
+.modal__inner.login_form.login_form_open
+{
+    display: block;
+}
