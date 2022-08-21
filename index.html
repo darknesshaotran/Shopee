@@ -1097,7 +1097,7 @@
         const login2 = document.querySelector('.btn_login')    
         const register2 = document.querySelector('.btn_register')     
         const register = document.querySelector('.header_register')
-        const modal_close = document.querySelector('.btn.back_btn')
+        const modal_closes = document.querySelectorAll('.btn.back_btn')
         const modal_inner = document.querySelector('.modal__inner')
 
         const registerForm  = document.querySelector('.register_form')
@@ -1119,7 +1119,7 @@
 
             modal_login.classList.remove('login_form_open');
         }
-        modal_close.onclick = function(){CloseRegisterForm()}
+        
          modal.onclick = function(){CloseRegisterForm()}
          modal_login.onclick = function(event){ event.stopPropagation();  }
         register2.onclick = function()
@@ -1145,7 +1145,10 @@
 
             modal_login.classList.add('login_form_open');
         }
-        
+        for(var modal_close of modal_closes)
+        {
+            modal_close.onclick = function(){CloseRegisterForm()};
+        }
         
         
     </script>
