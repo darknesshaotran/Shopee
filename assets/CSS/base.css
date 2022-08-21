@@ -190,11 +190,21 @@ ul
 {
     background-color:#ed5c3f;
 }
+
+.register_form
+{
+    display: none;
+}
+.register_form.register_open
+{
+    display: block;
+} 
 .login_form
 {
     display: none;
 }
-.modal__inner.login_form.login_form_open
+.login_form.login_form_open
 {
     display: block;
-}
+} 
+
