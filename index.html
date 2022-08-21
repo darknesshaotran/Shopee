@@ -994,11 +994,11 @@
         <div class="modal__body">
             <!-- REGISTER FORM -->
             
-            <div class="modal__inner">
+            <div class="modal__inner register_form">
                 <div class="form">
                     <div class="form__header">
                         <h3 class="form__heading">Đăng ký</h3>
-                        <p class="form__switch_btn">Đăng nhập</p>
+                        <p class="form__switch_btn btn_login">Đăng nhập</p>
                     </div>
                 
                     <div class="form__info_input">
@@ -1047,8 +1047,8 @@
             <div class="modal__inner login_form">
                 <div class="form">
                     <div class="form__header">
-                        <h3 class="form__heading form__heading_login">Đăng nhập</h3>
-                        <p class="form__switch_btn">Đăng ký</p>
+                        <h3 class="form__heading">Đăng nhập</h3>
+                        <p class="form__switch_btn btn_register">Đăng ký</p>
                     </div>
                 
                     <div class="form__info_input">
@@ -1092,19 +1092,21 @@
         </div>
     </div>
     <script>
+           
         const login = document.querySelector('.header_login')    
-        const login2 = document.querySelector('.form__heading_login')    
-        const register2 = document.querySelector('.form__switch_btn')     
+        const login2 = document.querySelector('.btn_login')    
+        const register2 = document.querySelector('.btn_register')     
         const register = document.querySelector('.header_register')
         const modal_close = document.querySelector('.btn.back_btn')
         const modal_inner = document.querySelector('.modal__inner')
 
+        const registerForm  = document.querySelector('.register_form')
         const modal_login = document.querySelector('.login_form')
         const modal = document.querySelector('.modal');
         function showRegisterForm()
         {
             modal.classList.add('modal_open');
-
+         
         }
         function CloseRegisterForm()
         {
@@ -1113,11 +1115,36 @@
         register.onclick = function()
         {
             showRegisterForm();
+            registerForm.classList.add('register_open') ;
+
             modal_login.classList.remove('login_form_open');
         }
         modal_close.onclick = function(){CloseRegisterForm()}
-        modal.onclick = function(){CloseRegisterForm()}
-        modal_inner.onclick = function(event){ event.stopPropagation();  }
+         modal.onclick = function(){CloseRegisterForm()}
+         modal_login.onclick = function(event){ event.stopPropagation();  }
+        register2.onclick = function()
+        {
+            showRegisterForm();
+            registerForm.classList.add('register_open') ;
+
+            modal_login.classList.remove('login_form_open');
+        }
+        registerForm.onclick = function(event){ event.stopPropagation();  }
+        login.onclick = function()
+        {
+            
+            showRegisterForm();
+            registerForm.classList.remove('register_open') ;
+
+            modal_login.classList.add('login_form_open');
+        }
+        login2.onclick = function()
+        {
+            showRegisterForm();
+            registerForm.classList.remove('register_open') ;
+
+            modal_login.classList.add('login_form_open');
+        }
         
         
         
